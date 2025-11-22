@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat AI Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1>Cat AI Planner</h1>
+            <button id="settingsBtn" class="settings-btn">⚙️ Settings</button>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <h3>Task Lists</h3>
+                <div id="taskListsSidebar" class="task-lists">
+                    <!-- Task lists will be populated here -->
+                </div>
+            </aside>
+
+            <main class="content-area">
+                <div class="input-section">
+                    <textarea 
+                        id="taskInput" 
+                        placeholder="Describe your goal or situation (e.g., 'I have an interview tomorrow')"
+                        rows="3"
+                    ></textarea>
+                    <button id="breakdownBtn" class="breakdown-btn">Breakdown Task</button>
+                </div>
+
+                <div id="loadingState" class="loading-state hidden">
+                    <div class="spinner"></div>
+                    <p>Generating your task breakdown...</p>
+                </div>
+
+                <div id="taskListContainer" class="task-list-container">
+                    <div id="taskListHeader" class="task-list-header hidden">
+                        <input type="text" id="taskListName" class="task-list-name" placeholder="Task List Name">
+                        <button id="saveTaskList" class="save-btn">Save List</button>
+                    </div>
+                    <div id="tasksGrid" class="tasks-grid">
+                        <!-- Task cards will be populated here -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button id="closeSettings" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label for="apiKey">SiliconFlow API Key:</label>
+                <input type="password" id="apiKey" placeholder="Enter your API key">
+                <p class="api-help">Get your API key from <a href="https://cloud.siliconflow.cn/" target="_blank">SiliconFlow Console</a></p>
+            </div>
+            <div class="modal-footer">
+                <button id="saveSettings" class="save-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
